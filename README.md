@@ -1,16 +1,13 @@
-# trabalho_g1
+# Nome do projeto
+Trabalho G1 Flutter
 
-A new Flutter project.
+## Descrição
+Este projeto é uma aplicação em Flutter desempenhada na matéria de Tópicos Especiais.
 
-## Getting Started
+## Instalação
+Para executar o aplicativo em sua máquina, você precisará ter o Flutter instalado em seu computador. Em seguida, siga estas etapas:
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Clone este repositório em sua máquina.
+- Abra o terminal e navegue até o diretório do projeto.
+- Execute flutter pub get para baixar todas as dependências do projeto.
+- Execute flutter run para iniciar o aplicativo.
