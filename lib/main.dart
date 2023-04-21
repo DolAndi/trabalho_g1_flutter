@@ -1,6 +1,7 @@
 import 'package:trabalho_g1/response/response_data.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'package:trabalho_g1/client/api_client.dart';
 
@@ -9,7 +10,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -74,13 +75,26 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             title: Text(
               posts.data[index]['name'],
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
             subtitle: Text(posts.data[index]['email']),
+            trailing: IconButton(
+              icon: const Icon(Icons.location_on),
+              onPressed: () => _openMaps(posts.data[index]['address']['geo']['lat'], posts.data[index]['address']['geo']['lng']),
+            ),
           ),
         );
       },
       itemCount: posts.data.length,
     );
+  }
+
+  void _openMaps(String lat, String lng) async {
+    final url = 'https://www.google.com/maps/search/?api=1&query=$lat,$lng';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Não foi possível abrir o Google Maps.';
+    }
   }
 }
