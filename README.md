@@ -10,3 +10,6 @@ Para executar o aplicativo em sua máquina, você precisará ter o Flutter insta
 - Abra o terminal e navegue até o diretório do projeto.
 - Execute "flutter pub get" para baixar todas as dependências do projeto.
 - Execute "flutter run" para iniciar o aplicativo.
+
+### Alunos
+Vitor Viasdeski Monteiro e Andriano Toazza
