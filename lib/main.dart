@@ -3,28 +3,30 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 import 'package:trabalho_g1/client/api_client.dart';
+import 'screens/locales.screen.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Trabalho G1',
+      title: 'My Local',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home:
+          const MyHomePage(title: 'Trabalho G1 - Consumo de API de Endereços'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -74,9 +76,28 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             title: Text(
               posts.data[index]['name'],
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
             subtitle: Text(posts.data[index]['email']),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MapScreen(
+                          lat: posts.data[index]['lat'],
+                          lng: posts.data[index]['lng'],
+                        ),
+                      ),
+                    );
+                  },
+                  child: const Text('Address'),
+                ),
+              ],
+            ),
           ),
         );
       },

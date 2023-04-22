@@ -13,7 +13,7 @@ class _ApiClient implements ApiClient {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://gorest.co.in/public-api/';
+    baseUrl ??= 'https://run.mocky.io/v3/';
   }
 
   final Dio _dio;
@@ -34,7 +34,7 @@ class _ApiClient implements ApiClient {
     )
             .compose(
               _dio.options,
-              '/users',
+              '/b9c7c780-eaf4-4bbc-b44a-ed8828d0ebf6',
               queryParameters: queryParameters,
               data: _data,
             )

@@ -1,16 +1,21 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:flutter/services.dart' show rootBundle;
 
 part 'response_data.g.dart';
 
 @JsonSerializable()
 class User {
-  int id;
-  String name;
-  String email;
-  String gender;
-  String status;
-  String created_at;
-  String updated_at;
+  final int id;
+  final String name;
+  final String email;
+  final String gender;
+  final String status;
+  final String created_at;
+  final String updated_at;
+  final double lat;
+  final double lng;
 
   User(
       {required this.id,
@@ -19,20 +24,12 @@ class User {
       required this.gender,
       required this.status,
       required this.created_at,
-      required this.updated_at});
+      required this.updated_at,
+      required this.lat,
+      required this.lng});
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
   Map<String, dynamic> toJson() => _$UserToJson(this);
-}
-
-@JsonSerializable()
-class Geo {
-  String lat;
-  String lng;
-  Geo({required this.lat, required this.lng});
-
-  factory Geo.fromJson(Map<String, dynamic> json) => _$GeoFromJson(json);
-  toJson() => _$GeoToJson(this);
 }
 
 @JsonSerializable()

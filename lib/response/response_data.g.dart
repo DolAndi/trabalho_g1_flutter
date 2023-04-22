@@ -14,6 +14,8 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       status: json['status'] as String,
       created_at: json['created_at'] as String,
       updated_at: json['updated_at'] as String,
+      lat: (json['lat'] as num).toDouble(),
+      lng: (json['lng'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -24,14 +26,6 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'status': instance.status,
       'created_at': instance.created_at,
       'updated_at': instance.updated_at,
-    };
-
-Geo _$GeoFromJson(Map<String, dynamic> json) => Geo(
-      lat: json['lat'] as String,
-      lng: json['lng'] as String,
-    );
-
-Map<String, dynamic> _$GeoToJson(Geo instance) => <String, dynamic>{
       'lat': instance.lat,
       'lng': instance.lng,
     };
