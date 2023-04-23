@@ -81,22 +81,23 @@ class _MyHomePageState extends State<MyHomePage> {
             subtitle: Text(posts.data[index]['email']),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MapScreen(
-                          lat: posts.data[index]['lat'],
-                          lng: posts.data[index]['lng'],
-                        ),
+            children: [
+              IconButton(
+                icon: const Icon(Icons.location_on),
+                color: Colors.green,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MapScreen(
+                        lat: posts.data[index]['lat'],
+                        lng: posts.data[index]['lng'],
                       ),
-                    );
-                  },
-                  child: const Text('Address'),
-                ),
-              ],
+                    ),
+                  );
+                },
+              ),
+            ],
             ),
           ),
         );
