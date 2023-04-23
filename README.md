@@ -1,7 +1,7 @@
 # Trabalho G1 Flutter
 
 ## Descrição
-Este projeto é uma aplicação em Flutter desempenhada na matéria de Tópicos Especiais.
+Este projeto é uma aplicação em Flutter atribuido pelo Prof. Ricardo Ogliari na matéria de Tópicos Especiais do curso de Ciência da Computação.
 
 ## Instalação
 Para executar o aplicativo em sua máquina, você precisará ter o Flutter instalado em seu computador. Em seguida, siga estas etapas:
@@ -12,4 +12,5 @@ Para executar o aplicativo em sua máquina, você precisará ter o Flutter insta
 - Execute "flutter run" para iniciar o aplicativo.
 
 ### Alunos
-Vitor Viasdeski Monteiro e Andriano Toazza
+- Vitor Viasdeski Monteiro
+- Andriano Toazza
